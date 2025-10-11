@@ -1,138 +1,119 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>Spyderwell — Where tech meets heart</title>
-<meta name="description" content="Spyderwell: humans + AI, shipping smarter. Where technology meets heart." />
-<link rel="canonical" href="https://spyderwell.com/"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Spyderwell — Where tech meets heart</title>
+  <meta name="description" content="Spyderwell: humans + AI, shipping smarter. Where technology meets heart." />
+  <link rel="canonical" href="https://spyderwell.com/" />
 
-<!-- Favicons (swap paths if you place them elsewhere) -->
-<link rel="icon" type="image/png" href="/assets/spyderwell-favicon.png" />
-<link rel="icon" type="image/x-icon" href="/assets/spyderwell-favicon.ico" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/assets/spyderwell-favicon.png" />
+  <link rel="icon" type="image/x-icon" href="/assets/spyderwell-favicon.ico" />
 
-<!-- Open Graph / Twitter -->
-<meta property="og:title" content="Spyderwell — Where tech meets heart" />
-<meta property="og:description" content="Every click connects to a cause." />
-<meta property="og:image" content="/assets/og-image.png" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://spyderwell.com/" />
-<meta name="twitter:card" content="summary_large_image" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Spyderwell — Where tech meets heart" />
+  <meta property="og:description" content="Every click connects to a cause." />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://spyderwell.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-header">
-<!-- Logo-only mark; replace SVG with your rook/well icon -->
-<a class="brand" href="/">
-<svg class="mark" viewBox="0 0 64 64" aria-label="Spyderwell logo" role="img">
-<rect width="64" height="64" rx="14" fill="currentColor" opacity=".08"/>
-<!-- Minimal rook/well mark (placeholder) -->
-<path d="M20 48h24V22H20v26Z M24 22v-6h6v6m4 0v-6h6v6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-</svg>
-<span class="name">Spyderwell</span>
-</a>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 64 64" aria-label="Spyderwell logo" role="img">
+        <rect width="64" height="64" rx="14" fill="currentColor" opacity=".08"/>
+        <path d="M20 48h24V22H20v26Z M24 22v-6h6v6m4 0v-6h6v6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="name">Spyderwell</span>
+    </a>
 
-```
-<!-- Compact nav; add pages as you go -->
-<nav class="nav">
-  <a href="/">Home</a>
-  <a href="<https://example.com/dashboard>">Dashboard</a>
-  <a href="#awareness">brAwareness</a>
-  <a href="/about">About</a>
-  <a href="/contact">Contact</a>
-</nav>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="https://example.com/dashboard">Dashboard</a>
+      <a href="#awareness">brAwareness</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
 
-```
+  <main id="main" class="wrap">
+    <section class="hero">
+      <h1>Where technology meets heart.</h1>
+      <p class="sub">Every click connects to a cause.</p>
+      <div class="cta">
+        <a class="btn" href="/assets/spyderwell.vcf">Save vCard</a>
+        <a class="btn ghost" href="https://example.com/dashboard">Open Dashboard</a>
+      </div>
+    </section>
 
-</header>
+    <section id="awareness" class="awareness" aria-labelledby="awareness-title">
+      <h2 id="awareness-title">Signal the Good</h2>
+      <p class="micro">A permanent thread on our homepage. We start with four.</p>
 
-<main id="main" class="wrap">
-<!-- Hero: mobile-first, one-screen, no sideways scroll -->
-<section class="hero">
-<h1>Where technology meets heart.</h1>
-<p class="sub">Every click connects to a cause.</p>
-<div class="cta">
-<!-- Swap href targets when ready -->
-<a class="btn" href="/assets/spyderwell.vcf">Save vCard</a>
-<a class="btn ghost" href="https://example.com/dashboard">Open Dashboard</a>
-</div>
-</section>
+      <ul class="tiles" role="list">
+        <!-- brAwareness (pink) -->
+        <li class="tile">
+          <a class="card" href="https://www.nationalbreastcancer.org/" target="_blank" rel="noopener">
+            <div class="icon pink" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M26 12c-6 0-10 4-10 10 0 9 11 16 16 22 5-6 16-13 16-22 0-6-4-10-10-10-5 0-6 3-6 3s-1-3-6-3Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
+            </div>
+            <div class="text">
+              <strong>brAwareness</strong>
+              <span>Breast cancer support & resources</span>
+            </div>
+          </a>
+        </li>
 
-```
-<!-- Awareness (modular tiles). Keep icons simple SVG; link out to official orgs -->
-<section id="awareness" class="awareness" aria-labelledby="awareness-title">
-  <h2 id="awareness-title">Signal the Good</h2>
-  <p class="micro">A permanent thread on our homepage. We start with four.</p>
+        <!-- Diabetes -->
+        <li class="tile">
+          <a class="card" href="https://diabetes.org/" target="_blank" rel="noopener">
+            <div class="icon red" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M20 48c10-18 14-18 24 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+            </div>
+            <div class="text">
+              <strong>Diabetes</strong>
+              <span>Education, screening, and care</span>
+            </div>
+          </a>
+        </li>
 
-  <ul class="tiles" role="list">
-    <!-- brAwareness (pink) -->
-    <li class="tile">
-      <a class="card" href="<https://www.nationalbreastcancer.org/>" target="_blank" rel="noopener">
-        <div class="icon pink" aria-hidden="true">
-          <!-- monoline ribbon placeholder -->
-          <svg viewBox="0 0 64 64"><path d="M26 12c-6 0-10 4-10 10 0 9 11 16 16 22 5-6 16-13 16-22 0-6-4-10-10-10-5 0-6 3-6 3s-1-3-6-3Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
-        </div>
-        <div class="text">
-          <strong>brAwareness</strong>
-          <span>Breast cancer support & resources</span>
-        </div>
-      </a>
-    </li>
+        <!-- Autism -->
+        <li class="tile">
+          <a class="card" href="https://autismsociety.org/" target="_blank" rel="noopener">
+            <div class="icon blue" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M18 24h12v12H18Z M34 28h12v12H34Z" fill="none" stroke="currentColor" stroke-width="3" /></svg>
+            </div>
+            <div class="text">
+              <strong>Autism Acceptance</strong>
+              <span>Community, understanding, inclusion</span>
+            </div>
+          </a>
+        </li>
 
-    <!-- Diabetes (red/gray) -->
-    <li class="tile">
-      <a class="card" href="<https://diabetes.org/>" target="_blank" rel="noopener">
-        <div class="icon red" aria-hidden="true">
-          <svg viewBox="0 0 64 64"><path d="M20 48c10-18 14-18 24 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-        </div>
-        <div class="text">
-          <strong>Diabetes</strong>
-          <span>Education, screening, and care</span>
-        </div>
-      </a>
-    </li>
+        <!-- Rainbow -->
+        <li class="tile">
+          <a class="card" href="https://www.cancer.org/" target="_blank" rel="noopener">
+            <div class="icon rainbow" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M14 42a18 18 0 1 1 36 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+            </div>
+            <div class="text">
+              <strong>Rainbow Unity</strong>
+              <span>General cancer awareness</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-    <!-- Autism (puzzle accent; keep minimal) -->
-    <li class="tile">
-      <a class="card" href="<https://autismsociety.org/>" target="_blank" rel="noopener">
-        <div class="icon blue" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <path d="M18 24h12v12H18Z M34 28h12v12H34Z" fill="none" stroke="currentColor" stroke-width="3" />
-          </svg>
-        </div>
-        <div class="text">
-          <strong>Autism Acceptance</strong>
-          <span>Community, understanding, inclusion</span>
-        </div>
-      </a>
-    </li>
-
-    <!-- Rainbow (unity) -->
-    <li class="tile">
-      <a class="card" href="<https://www.cancer.org/>" target="_blank" rel="noopener">
-        <div class="icon rainbow" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <path d="M14 42a18 18 0 1 1 36 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="text">
-          <strong>Rainbow Unity</strong>
-          <span>General cancer awareness</span>
-        </div>
-      </a>
-    </li>
-  </ul>
-</section>
-
-```
-
-</main>
-
-<footer class="site-footer">
-<small>Built AIsisted, not AI-did. • <a href="https://x.com/spyderwell" target="_blank" rel="noopener">@spyderwell</a></small>
-</footer>
+  <footer class="site-footer">
+    <small>Built AIsisted, not AI-did. • <a href="https://x.com/spyderwell" target="_blank" rel="noopener">@spyderwell</a></small>
+  </footer>
 </body>
 </html>
