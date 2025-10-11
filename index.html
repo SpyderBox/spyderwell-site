@@ -1,301 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>tipped inn — ebdb bnb (TN)</title>
-  <meta name="description" content="tipped inn — EBDB BNB’s Tennessee affiliate. 'we keep it all on the down low. no cap'">
-  <meta name="theme-color" content="#0e1018">
-  <meta property="og:title" content="tipped inn — ebdb bnb (TN)">
-  <meta property="og:description" content="we keep it all on the low. no cap">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='100%25' height='100%25' fill='%230e1018'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='64' fill='%23b1f2e6' font-family='Georgia, serif'%3ETipped Inn%3C/text%3E%3C/svg%3E">
-  <style>
-    :root{
-      --bg:#0e1018;
-      --ink:#eef7ff;
-      --muted:#b7c4d6;
-      --plum:#351a40;
-      --mason:#b1f2e6;
-      --gold:#ffd166;
-      --accent:#7cfcc2;
-      --card:#141826;
-      --ring:rgba(255,255,255,.12);
-      --shadow:0 12px 30px rgba(0,0,0,.45);
-      --radius:14px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0; color:var(--ink); background:
-      radial-gradient(900px 600px at 80% -5%, rgba(177,242,230,.12), transparent 60%),
-      radial-gradient(700px 500px at 10% 10%, rgba(255,209,102,.10), transparent 65%),
-      linear-gradient(180deg,#101323 0%,#070a14 100%);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      line-height:1.6;
-    }
-    a{color:var(--gold); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px; margin-inline:auto; padding:0 20px}
-    header{position:sticky; top:0; z-index:10; backdrop-filter: blur(8px); background:rgba(8,10,20,.6); border-bottom:1px solid var(--ring)}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-    .logo{display:flex; gap:12px; align-items:center; font-weight:800}
-    .logo svg{width:42px; height:42px; filter: drop-shadow(0 6px 14px rgba(177,242,230,.35))}
-    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border:1px solid var(--ring); border-radius:999px; background:rgba(255,255,255,.04); box-shadow:var(--shadow)}
-    .btn{display:inline-block; padding:12px 18px; border-radius:12px; background:linear-gradient(92deg,var(--mason), #5fb9ff 50%, var(--accent)); color:#06121a; font-weight:900; text-transform:uppercase; letter-spacing:.3px; border:none; cursor:pointer; box-shadow:0 16px 32px rgba(95,185,255,.35)}
-    .btn:hover{opacity:.95; transform:translateY(-1px)}
-    .btn.ghost{background:rgba(255,255,255,.06); color:var(--ink); border:1px solid var(--ring); text-transform:none; font-weight:700; letter-spacing:.2px}
-    .hero{padding:72px 0 36px}
-    .grid-2{display:grid; grid-template-columns:1.2fr 1fr; gap:24px}
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-    .card{background: radial-gradient(160% 120% at 0% 0%, rgba(255,255,255,.05), transparent 70%), var(--card); border:1px solid var(--ring); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
-    h1{font-size: clamp(2rem, 4vw + .5rem, 3.6rem); margin:.2em 0 .1em}
-    h2{font-size: clamp(1.4rem, 3vw + .2rem, 2.2rem); margin:0 0 10px}
-    .sub{color:var(--muted); max-width:62ch}
-    .badge{font-size:.82rem; color:#08121a; background:var(--mason); padding:6px 10px; border-radius:999px; display:inline-flex; align-items:center; gap:8px; font-weight:800}
-    .fine{font-size:.86rem; color:var(--muted)}
-    .rooms .thumb{width:120px; height:90px; flex:0 0 120px; border-radius:10px; background:
-      linear-gradient(135deg, rgba(177,242,230,.45), rgba(95,185,255,.25)),
-      linear-gradient(0deg, rgba(255,209,102,.4), transparent);
-      border:1px solid var(--ring); box-shadow:var(--shadow)}
-    .rooms .card{display:flex; gap:16px; align-items:flex-start}
-    .cta{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px; border-radius:var(--radius); background:linear-gradient(120deg, rgba(177,242,230,.10), rgba(255,209,102,.10)); border:1px solid var(--ring); box-shadow:var(--shadow)}
-    footer{padding:32px 0 60px}
-    /* Responsive */
-    @media (max-width: 920px){
-      .grid-2{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .rooms .card{flex-direction:column}
-      .rooms .thumb{width:100%; height:160px}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Spyderwell — Where tech meets heart</title>
+<meta name="description" content="Spyderwell: humans + AI, shipping smarter. Where technology meets heart." />
+<link rel="canonical" href="https://spyderwell.com/"/>
+
+<!-- Favicons (swap paths if you place them elsewhere) -->
+<link rel="icon" type="image/png" href="/assets/spyderwell-favicon.png" />
+<link rel="icon" type="image/x-icon" href="/assets/spyderwell-favicon.ico" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="Spyderwell — Where tech meets heart" />
+<meta property="og:description" content="Every click connects to a cause." />
+<meta property="og:image" content="/assets/og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spyderwell.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="logo">
-        <!-- porch light + mason jar logo -->
-        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="jar" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#b1f2e6"/>
-              <stop offset="1" stop-color="#ffd166"/>
-            </linearGradient>
-          </defs>
-          <g fill="none" stroke="url(#jar)" stroke-width="2">
-            <rect x="38" y="26" width="44" height="64" rx="10" opacity=".9"/>
-            <line x1="38" y1="36" x2="82" y2="36"/>
-            <circle cx="60" cy="58" r="16" opacity=".8"/>
-            <circle cx="60" cy="58" r="4" fill="url(#jar)" stroke="none"/>
-          </g>
-        </svg>
-        <div>
-          <div>tipped inn</div>
-          <div class="fine">ebdb bnb • Tennessee Affiliate</div>
-        </div>
-      </div>
-      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
-        <span class="pill">🌙 “we keep it all on the down low. no cap”</span>
-        <a class="btn" href="#book">Book (for the bit)</a>
-      </div>
-    </div>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
 
-  <main>
-    <section class="hero">
-      <div class="container grid-2">
-        <div>
-          <span class="badge">Southern • Hush-Hush • Porchlight</span>
-          <h1>Front‑porch charm. Back‑channel hospitality.</h1>
-          <p class="sub">Welcome to <strong>tipped inn</strong> — the Tennessee sibling of the infamous <em>Lick &amp; Tickle</em>. Same EBDB DNA, with sweet tea diplomacy and moonlit mischief.</p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px">
-            <a class="pill" href="#amenities">✨ Amenities</a>
-            <a class="pill" href="#rooms">🛏️ Rooms</a>
-            <a class="pill" href="#network">🕸️ EBDB Network</a>
-            <a class="pill" href="#faq">❓ FAQ</a>
-          </div>
-        </div>
-        <div class="card">
-          <h2 style="margin-top:0">House Code (unspoken)</h2>
-          <ul>
-            <li>Quiet hours: when the crickets clock in.</li>
-            <li>Passwords: exchanged by porch swing nod.</li>
-            <li>Snitches get stitches (kidding). But hush.</li>
-            <li>Safe word: “no cap.”</li>
-          </ul>
-          <div class="cta" id="book">
-            <div>
-              <strong>Book a stay (simulation)</strong><br>
-              <span class="fine">Fictional checkouts. Real vibes.</span>
-            </div>
-            <button class="btn" onclick="confetti('Reserved: hush suite secured')">Instant Book</button>
-          </div>
-          <p class="fine" style="margin-top:8px">Parody site, EBDB universe. Zero real transactions.</p>
-        </div>
-      </div>
-    </section>
+<header class="site-header">
+<!-- Logo-only mark; replace SVG with your rook/well icon -->
+<a class="brand" href="/">
+<svg class="mark" viewBox="0 0 64 64" aria-label="Spyderwell logo" role="img">
+<rect width="64" height="64" rx="14" fill="currentColor" opacity=".08"/>
+<!-- Minimal rook/well mark (placeholder) -->
+<path d="M20 48h24V22H20v26Z M24 22v-6h6v6m4 0v-6h6v6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<span class="name">Spyderwell</span>
+</a>
 
-    <section class="container" id="about" style="padding: 14px 0 0">
-      <div class="card">
-        <h2 style="margin-top:0">About tipped inn</h2>
-        <p>Birthed from the Virginia legend, this TN chapter keeps it low-key: mason-jar glow, cicada soundtrack, and a hospitality drawl. Founder <strong>Mike Core</strong> blessed it with the motto we live by.</p>
-      </div>
-    </section>
+```
+<!-- Compact nav; add pages as you go -->
+<nav class="nav">
+  <a href="/">Home</a>
+  <a href="<https://example.com/dashboard>">Dashboard</a>
+  <a href="#awareness">brAwareness</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+</nav>
 
-    <section style="padding:38px 0" id="amenities">
-      <div class="container">
-        <h2>Amenities (down‑low edition)</h2>
-        <div class="grid-3">
-          <div class="card"><ul>
-            <li>🥣 Continental (wink) breakfast</li>
-            <li>📶 Wi‑Fi with a poker face</li>
-            <li>🛁 Soaker tubs &amp; porch steam</li>
-          </ul></div>
-          <div class="card"><ul>
-            <li>🎧 Whisper‑quiet quiet hours</li>
-            <li>🫖 Sweet tea &amp; tall tales</li>
-            <li>🪟 Blackout curtains, blacked‑out stories</li>
-          </ul></div>
-          <div class="card"><ul>
-            <li>🗝️ Vintage key tag No. 42</li>
-            <li>🪑 Rockers &amp; gossip embargo</li>
-            <li>🎶 Playlist: Moonlight Mix</li>
-          </ul></div>
-        </div>
-      </div>
-    </section>
+```
 
-    <section class="rooms" id="rooms" style="padding: 10px 0 34px">
-      <div class="container">
-        <h2>Rooms &amp; Tall Tales</h2>
-        <div class="grid-3">
-          <div class="card">
-            <div class="thumb" aria-label="Moonlit suite"></div>
-            <div>
-              <strong>The Hush Suite</strong><br>King • Private porch • Nightcap kit<br>
-              <span class="fine">From $311 / night — imaginary</span>
-            </div>
-          </div>
-          <div class="card">
-            <div class="thumb" aria-label="Porch queen"></div>
-            <div>
-              <strong>The Porch Queen</strong><br>Queen • Swing view • Early crickets<br>
-              <span class="fine">From $211 / night — imaginary</span>
-            </div>
-          </div>
-          <div class="card">
-            <div class="thumb" aria-label="Cozy cabin nook"></div>
-            <div>
-              <strong>The Mason Nook</strong><br>Full • Firefly lamp • Secret jar<br>
-              <span class="fine">From $161 / night — imaginary</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</header>
 
-    <section id="network" style="padding: 38px 0">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 style="margin-top:0">EBDB Network</h2>
-          <p>We tip our hat to the mothership: <em>The Lick &amp; Tickle</em> (VA). Same cheeky charter, now with Appalachian twang.</p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap">
-            <a class="pill" href="#">@TippedInnTN</a>
-            <a class="pill" href="#">@TheLickAndTickle</a>
-            <a class="pill" href="#">@EBDBbnbOfficial</a>
-          </div>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Tagline Canon</h3>
-          <p><em>“we keep it all on the down low. no cap”</em> Use it on headers, bios, and video outros. Alt short: <em>“down low. no cap.”</em></p>
-          <ul class="fine">
-            <li>Voice: sly, neighborly, minimal side‑eye</li>
-            <li>Emoji: 🌙🫖🪟 (sparingly)</li>
-            <li>Hashtags: #tippedinn #ebdbbnb #downlownocap</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<main id="main" class="wrap">
+<!-- Hero: mobile-first, one-screen, no sideways scroll -->
+<section class="hero">
+<h1>Where technology meets heart.</h1>
+<p class="sub">Every click connects to a cause.</p>
+<div class="cta">
+<!-- Swap href targets when ready -->
+<a class="btn" href="/assets/spyderwell.vcf">Save vCard</a>
+<a class="btn ghost" href="https://example.com/dashboard">Open Dashboard</a>
+</div>
+</section>
 
-    <section id="faq" style="padding: 6px 0 40px">
-      <div class="container grid-2">
-        <div>
-          <h2>FAQ</h2>
-          <details class="card"><summary><strong>Real B&amp;B?</strong></summary><p>Nope — parody property, sibling to the fictional L&amp;T.</p></details>
-          <details class="card"><summary><strong>Can I book?</strong></summary><p>Only in spirit. The button throws confetti and confidence.</p></details>
-          <details class="card"><summary><strong>What’s with the hush vibe?</strong></summary><p>Because what happens on the porch stays on the porch.</p></details>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Contact (coded)</h3>
-          <form onsubmit="return fakeSubmit(this)">
-            <label>Name<br><input required name="name" class="pill" style="width:100%"></label><br><br>
-            <label>Email<br><input required name="email" type="email" class="pill" style="width:100%"></label><br><br>
-            <label>Message<br><textarea required name="msg" class="pill" style="width:100%; min-height:100px"></textarea></label><br><br>
-            <button class="btn">Send Whisper</button>
-            <p class="fine" id="formMsg" style="margin-top:8px"></p>
-          </form>
-        </div>
-      </div>
-    </section>
+```
+<!-- Awareness (modular tiles). Keep icons simple SVG; link out to official orgs -->
+<section id="awareness" class="awareness" aria-labelledby="awareness-title">
+  <h2 id="awareness-title">Signal the Good</h2>
+  <p class="micro">A permanent thread on our homepage. We start with four.</p>
 
-    <section style="padding: 0 0 36px">
-      <div class="container cta">
-        <div>
-          <strong>low‑key ready?</strong><br>
-          <span class="fine">Secure the hush suite. Pure theater.</span>
+  <ul class="tiles" role="list">
+    <!-- brAwareness (pink) -->
+    <li class="tile">
+      <a class="card" href="<https://www.nationalbreastcancer.org/>" target="_blank" rel="noopener">
+        <div class="icon pink" aria-hidden="true">
+          <!-- monoline ribbon placeholder -->
+          <svg viewBox="0 0 64 64"><path d="M26 12c-6 0-10 4-10 10 0 9 11 16 16 22 5-6 16-13 16-22 0-6-4-10-10-10-5 0-6 3-6 3s-1-3-6-3Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
         </div>
-        <a class="btn ghost" href="#book">Engage Fake Checkout</a>
-      </div>
-    </section>
-  </main>
+        <div class="text">
+          <strong>brAwareness</strong>
+          <span>Breast cancer support & resources</span>
+        </div>
+      </a>
+    </li>
 
-  <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px">
-      <div class="pill">🕷️ Powered by Spyderwell (staging)</div>
-      <div class="fine">© 2025 tipped inn / EBDB BNB Network — Tennessee Division.</div>
-    </div>
-  </footer>
+    <!-- Diabetes (red/gray) -->
+    <li class="tile">
+      <a class="card" href="<https://diabetes.org/>" target="_blank" rel="noopener">
+        <div class="icon red" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M20 48c10-18 14-18 24 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="text">
+          <strong>Diabetes</strong>
+          <span>Education, screening, and care</span>
+        </div>
+      </a>
+    </li>
 
-  <script>
-    // internal smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
-    });
-    function fakeSubmit(form){
-      const msg = document.getElementById('formMsg');
-      msg.textContent = 'Thanks, ' + form.name.value + '. Your whisper has been filed under “front porch only.”';
-      confetti('Whisper sent.');
-      form.reset();
-      return false;
-    }
-    function confetti(text){
-      const n = document.createElement('div');
-      n.textContent = text;
-      n.style.position='fixed'; n.style.left='50%'; n.style.top='20px'; n.style.transform='translateX(-50%)';
-      n.style.background='linear-gradient(90deg,var(--mason), #5fb9ff, var(--accent))';
-      n.style.color='#06121a'; n.style.padding='10px 14px'; n.style.borderRadius='10px'; n.style.boxShadow='var(--shadow)'; n.style.zIndex=1000;
-      document.body.appendChild(n); setTimeout(()=>n.remove(), 2400);
-      for(let i=0;i<34;i++){
-        const c = document.createElement('span'); c.textContent='•'; c.style.position='fixed';
-        c.style.left='50%'; c.style.top='40px'; c.style.transform=`translateX(-50%) rotate(${Math.random()*360}deg)`;
-        c.style.fontSize=(8+Math.random()*12)+'px'; c.style.color=['#b1f2e6','#ffd166','#7cfcc2'][Math.floor(Math.random()*3)];
-        c.style.transition='all 900ms ease'; document.body.appendChild(c);
-        requestAnimationFrame(()=>{ c.style.left= 20+Math.random()*60+'vw'; c.style.top=10+Math.random()*60+'vh'; c.style.opacity=.0; });
-        setTimeout(()=>c.remove(), 1100+Math.random()*700);
-      }
-    }
-    // Easter egg: type "NO CAP" for moonlight mode
-    (function(){
-      let buf=''; window.addEventListener('keydown', e=>{
-        buf = (buf + (e.key||'')).slice(-6).toUpperCase();
-        if(buf.endsWith('NO CAP')){
-          document.body.style.background = 'linear-gradient(180deg,#0b0f1b 0%, #010308 100%)';
-          confetti('Moonlight mode: down low.');
-        }
-      });
-    })();
-  </script>
+    <!-- Autism (puzzle accent; keep minimal) -->
+    <li class="tile">
+      <a class="card" href="<https://autismsociety.org/>" target="_blank" rel="noopener">
+        <div class="icon blue" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M18 24h12v12H18Z M34 28h12v12H34Z" fill="none" stroke="currentColor" stroke-width="3" />
+          </svg>
+        </div>
+        <div class="text">
+          <strong>Autism Acceptance</strong>
+          <span>Community, understanding, inclusion</span>
+        </div>
+      </a>
+    </li>
+
+    <!-- Rainbow (unity) -->
+    <li class="tile">
+      <a class="card" href="<https://www.cancer.org/>" target="_blank" rel="noopener">
+        <div class="icon rainbow" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M14 42a18 18 0 1 1 36 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="text">
+          <strong>Rainbow Unity</strong>
+          <span>General cancer awareness</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</section>
+
+```
+
+</main>
+
+<footer class="site-footer">
+<small>Built AIsisted, not AI-did. • <a href="https://x.com/spyderwell" target="_blank" rel="noopener">@spyderwell</a></small>
+</footer>
 </body>
 </html>
