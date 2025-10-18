@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Spyderbox</title>
+  <style>
+  :root{--bg:#0f1113;--panel:#0b0c0d;--muted:#9aa0a6;--accent:#7b8c99;--glass:rgba(255,255,255,0.03)}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+  body{background:linear-gradient(180deg,var(--bg),#070708);color:#e7ecef;display:flex;align-items:center;justify-content:center;padding:40px}
+  .card{width:min(880px,95%);background:var(--panel);border-radius:12px;box-shadow:0 6px 30px rgba(2,6,8,0.7);overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+  .grid{display:grid;grid-template-columns:1fr 360px}
+  .left{padding:48px 56px}
+  .right{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}
+  .box{width:100%;background:var(--glass);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);text-align:center}
+  .logo{font-weight:700;letter-spacing:0.6px;font-size:18px;color:#dfe7ea}
+  h1{margin:0 0 8px;font-weight:600;letter-spacing:0.2px;font-size:26px;color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,0.7)}
+  p.lead{margin:0 0 20px;color:var(--muted);font-size:15px;line-height:1.45}
+  ul{color:var(--muted);padding-left:18px;margin-top:18px}
+  .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn, .email-link{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:8px;color:#d4dadf;cursor:pointer;text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:8px}
+  .btn:hover,.email-link:hover{color:#fff;border-color:var(--accent)}
+  a.link{color:var(--accent);text-decoration:none}
+  footer{padding:18px 24px;color:var(--muted);font-size:13px;text-align:center;background:transparent}
+  @media (max-width:900px){.grid{grid-template-columns:1fr}.right{order:2}.left{order:1;padding:28px}}
+  .envelope{width:14px;height:14px;display:inline-block;background:#d4dadf;mask:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22white%22 d=%22M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z%22/></svg>') no-repeat center/contain}
+
+  .cols{display:grid;grid-template-columns:2fr 1fr}
+  .files{padding:36px 44px}
+  .file-list{margin-top:8px;display:grid;gap:10px}
+  .file{display:flex;justify-content:space-between;align-items:center;background:var(--glass);padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.05)}
+  .badge{font-size:12px;color:#cdd6db;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:2px 8px}
+  .activity{padding:24px;display:flex;flex-direction:column;gap:12px}
+  .kv{display:flex;justify-content:space-between;color:var(--muted)}
+  .logout{margin-top:12px}
+  </style>
+</head>
+<body>
+  <div class="card" role="main" aria-label="Spyderbox dashboard">
+    <div class="cols">
+      <section class="files">
+        <div class="logo">Spyderwell</div>
+        <h1>Spyderbox</h1>
+        <p class="lead">Private files. Keep this link secure.</p>
+        <div class="file-list" id="files">
+          <!-- Example files (replace hrefs with your real paths) -->
+          <div class="file"><span>Contact Card (vCard)</span><a class="badge" href="/contact.vcf" download>Download</a></div>
+          <div class="file"><span>Example PDF</span><a class="badge" href="/docs/example.pdf">Open</a></div>
+          <div class="file"><span>Notes (TXT)</span><a class="badge" href="/docs/notes.txt">Open</a></div>
+        </div>
+        <div class="logout">
+          <a class="btn" href="/spyderbox_login.html">Log out</a>
+          <a class="email-link" style="margin-left:8px" href="mailto:hello@spyderwell.com"><span class="envelope"></span> Contact</a>
+        </div>
+      </section>
+      <aside class="right" aria-label="Activity">
+        <div class="box">
+          <strong>Activity</strong>
+          <div id="activity" style="margin-top:8px;color:var(--muted);font-size:14px">
+            Loading activity…
+          </div>
+        </div>
+        <div class="box">
+          <strong>Quick Links</strong>
+          <div style="margin-top:8px;color:var(--muted);font-size:14px">
+            <a class="link" href="/">Home</a> · <a class="link" href="/spyderbox_login.html">Login</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <footer>Spyderwell • Minimal | Discreet | Practical</footer>
+  </div>
+
+  <script>
+    // Guard: simple check if user has logged in recently
+    (function() {
+      const log = JSON.parse(localStorage.getItem('spyderbox_activity')||'{}');
+      if (!log.lastLogin) {
+        // Not logged in via this browser
+        window.location.href = "/spyderbox_login.html";
+      }
+      // Activity widget
+      const now = new Date().toISOString();
+      log.pageViews = (log.pageViews||0) + 1;
+      log.lastAccess = now;
+      localStorage.setItem('spyderbox_activity', JSON.stringify(log));
+
+      const fmt = (iso)=> new Date(iso).toLocaleString();
+      const el = document.getElementById('activity');
+      el.innerHTML = `
+        <div class="kv"><span>Logins:</span><span>${log.logins||1}</span></div>
+        <div class="kv"><span>Page views (this device):</span><span>${log.pageViews||1}</span></div>
+        <div class="kv"><span>Last login:</span><span>${log.lastLogin?fmt(log.lastLogin):"—"}</span></div>
+        <div class="kv"><span>Last access:</span><span>${fmt(log.lastAccess)}</span></div>
+      `;
+    })();
+  </script>
+</body>
+</html>

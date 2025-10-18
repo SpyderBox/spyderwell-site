@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Mike Cornwell
+ORG:Spyderwell
+TITLE:Founder
+TEL;TYPE=CELL:+1-555-555-5555
+EMAIL;TYPE=INTERNET:hello@spyderwell.com
+URL:https://spyderwell.com
+ADR;TYPE=WORK:;;[City];[State];[Zip];[Country]
+NOTE:Contact card for Spyderwell — minimal entry for outreach.
+END:VCARD

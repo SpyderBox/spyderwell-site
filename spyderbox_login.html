@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Spyderwell</title>
+  <title>Spyderbox Login</title>
   <style>
   :root{--bg:#0f1113;--panel:#0b0c0d;--muted:#9aa0a6;--accent:#7b8c99;--glass:rgba(255,255,255,0.03)}
   html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
@@ -24,39 +24,56 @@
   footer{padding:18px 24px;color:var(--muted);font-size:13px;text-align:center;background:transparent}
   @media (max-width:900px){.grid{grid-template-columns:1fr}.right{order:2}.left{order:1;padding:28px}}
   .envelope{width:14px;height:14px;display:inline-block;background:#d4dadf;mask:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22white%22 d=%22M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z%22/></svg>') no-repeat center/contain}
-</style>
+
+  .center{padding:48px 56px;max-width:520px;margin:auto}
+  .field{display:flex;flex-direction:column;gap:8px;margin:16px 0}
+  input[type="password"]{background:#0d0f11;border:1px solid rgba(255,255,255,0.06);color:#e7ecef;border-radius:8px;padding:12px 14px;outline:none}
+  .hint{color:var(--muted);font-size:13px}
+  .error{color:#ff7b7b;font-size:13px;display:none}
+  </style>
 </head>
 <body>
-  <div class="card" role="main" aria-label="Spyderwell homepage">
-    <div class="grid">
-      <div class="left">
-        <div class="logo">Spyderwell</div>
-        <h1>Discreet Solutions for Complex Challenges</h1>
-        <p class="lead">Spyderwell provides considered advice and technical architecture for operationally-sensitive projects. Minimal footprint, maximum clarity.</p>
-        <ul>
-          <li>Strategic consulting & technical planning</li>
-          <li>Secure documentation & project handoffs</li>
-          <li>Small-scale deployment & advisory</li>
-        </ul>
-        <div class="cta">
-          <a class="email-link" href="mailto:hello@spyderwell.com"><span class="envelope"></span> Contact Us</a>
-          <a class="btn" href="/spyderbox_login.html">Spyderbox Login</a>
-        </div>
+  <div class="card" role="main" aria-label="Spyderbox login">
+    <div class="center">
+      <div class="logo">Spyderwell</div>
+      <h1>Spyderbox</h1>
+      <p class="lead">Enter access code to continue.</p>
+      <div class="field">
+        <label for="pw" class="hint">Access Code</label>
+        <input id="pw" type="password" autocomplete="current-password" placeholder="••••••••" />
+        <div id="err" class="error">Incorrect code. Try again.</div>
       </div>
-      <aside class="right" aria-label="Contact & quick links">
-        <div class="box">
-          <strong>Spyderbox</strong>
-          <div style="margin-top:8px;color:var(--muted);font-size:14px">
-            Private file access for personal documents. Authorized users only.
-          </div>
-        </div>
-        <div class="box">
-          <strong>Files & Docs</strong>
-          <div style="margin-top:8px;color:var(--muted);font-size:14px">Use Spyderbox to access private materials.</div>
-        </div>
-      </aside>
+      <div class="cta">
+        <button class="btn" onclick="login()">Continue</button>
+        <a class="email-link" href="mailto:hello@spyderwell.com"><span class="envelope"></span> Contact</a>
+      </div>
+      <p class="hint" style="margin-top:16px">Tip: bookmark the dashboard once inside.</p>
     </div>
-    <footer>Spyderwell • Minimal | Discreet | Practical</footer>
   </div>
+
+  <script>
+    // Simple client-side gate (demo). Change the PASSWORD to your code.
+    const PASSWORD = "spyderbox123"; // ← change this
+    function login() {
+      const val = document.getElementById('pw').value;
+      const err = document.getElementById('err');
+      if (val === PASSWORD) {
+        // Record a login event for the activity widget
+        const now = new Date().toISOString();
+        const log = JSON.parse(localStorage.getItem('spyderbox_activity')||'{}');
+        log.lastLogin = now;
+        log.logins = (log.logins||0) + 1;
+        localStorage.setItem('spyderbox_activity', JSON.stringify(log));
+        window.location.href = "/spyderbox_dashboard.html";
+      } else {
+        err.style.display = 'block';
+        setTimeout(()=> err.style.display='none', 2500);
+      }
+    }
+    // Allow Enter key to submit
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter') login();
+    });
+  </script>
 </body>
 </html>
