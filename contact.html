@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact — Spyderwell</title>
+  <link rel="icon" href="assets/ribbon_autism_grad.png">
+  <style>
+    body{
+      margin:0;padding:0;display:flex;flex-direction:column;justify-content:center;align-items:center;
+      height:100vh;background:#0a0a0a;color:#f5f6f7;font:16px/1.6 ui-sans-serif,system-ui,-apple-system;
+      background:radial-gradient(800px 600px at 50% -10%,#151618 0%,#0a0a0a 70%);
+      overflow:hidden;text-align:center;
+    }
+    h1{font-family:ui-serif,Georgia,serif;font-weight:650;font-size:28px;margin-bottom:8px}
+    p{color:#aeb3bb;margin:0 0 8px}
+    a{color:#e9ffe9;text-decoration:none}
+    a:hover{text-decoration:underline}
+    footer{position:absolute;bottom:24px;color:#777;font-size:12px}
+    .weave{position:absolute;inset:-10%;pointer-events:none;opacity:.08;filter:saturate(1.1) contrast(1.1);
+      background-repeat:no-repeat;background-size:40% auto,32% auto,36% auto,28% auto;
+      background-position:-10% 10%,110% 20%,20% 120%,90% 110%;mix-blend-mode:screen;
+      animation:drift 40s linear infinite alternate;
+      background-image:url('assets/ribbon_autism_pieces.png'),url('assets/ribbon_autism_grad.png'),
+        url('assets/ribbon_diabetes.png'),url('assets/ribbon_breast.png');}
+    @keyframes drift{
+      0%{background-position:-12% 8%,108% 18%,18% 118%,92% 112%}
+      100%{background-position:-6% 14%,102% 24%,24% 110%,86% 106%}
+    }
+  </style>
+</head>
+<body>
+  <div class="weave" aria-hidden="true"></div>
+  <main>
+    <h1>Proper channels only.</h1>
+    <p>We do not solicit or accept open inquiries.</p>
+    <p>Verified introductions may use the <a href="mailto:contact@spyderwell.com?subject=Proper Channels Inquiry">standard vector</a>.</p>
+  </main>
+  <footer>© <script>document.write(new Date().getFullYear())</script> Spyderwell</footer>
+</body>
+</html>
