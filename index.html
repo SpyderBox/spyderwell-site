@@ -6,20 +6,55 @@
   <title>Spyderwell</title>
   <meta name="description" content="We quietly fix hard problems and support the causes that matter.">
   <link rel="icon" href="assets/ribbon_autism_grad.png">
+
+  <!-- Canonical & robots -->
+  <link rel="canonical" href="https://spyderwell.com/">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Spyderwell — Quiet Capability">
+  <meta property="og:description" content="Strategy, negotiation, and execution—handled cleanly, with traceable impact.">
+  <meta property="og:url" content="https://spyderwell.com/">
+  <meta property="og:image" content="assets/og.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Spyderwell — Quiet Capability">
+  <meta name="twitter:description" content="Strategy, negotiation, and execution—handled cleanly, with traceable impact.">
+  <meta name="twitter:image" content="assets/og.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Spyderwell",
+    "url":"https://spyderwell.com/",
+    "sameAs":["https://x.com/spyderwell"],
+    "description":"We quietly fix hard problems and support the causes that matter."
+  }
+  </script>
+
   <style>
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
     img{max-width:100%;display:block}
-    :root{
-      --bg:#0a0a0a;--fg:#f5f6f7;--muted:#aeb3bb;--line:#191a1d;--radius:16px;
-    }
-    body{background: radial-gradient(1200px 800px at 50% -10%, #151618 0%, var(--bg) 60%); color:var(--fg); font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    :root{--bg:#0a0a0a;--fg:#f5f6f7;--muted:#aeb3bb;--line:#191a1d;--radius:16px}
+    body{background: radial-gradient(1200px 800px at 50% -10%, #151618 0%, var(--bg) 60%); color:var(--fg); font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     .wrap{max-width:980px;margin:0 auto;padding:24px 18px 100px}
     header{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .logo{font-family: ui-serif, Georgia, 'Times New Roman', Times, serif; letter-spacing:.04em; font-weight:600; font-size:24px}
+    .logo{font-family: ui-serif,Georgia,'Times New Roman',Times,serif; letter-spacing:.04em; font-weight:600; font-size:24px}
     .seal{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.25));backdrop-filter:blur(2px)}
+    .nav{display:flex;align-items:center;gap:12px}
+    .nav a{color:var(--fg); text-decoration:none; font-size:14px; padding:6px 8px; border:1px solid var(--line); border-radius:10px; background:rgba(255,255,255,.03)}
+    .xlink{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.03)}
+    .xlink svg{width:18px;height:18px}
+
     .hero{position:relative; margin:48px 0 18px; padding:28px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.2)); overflow:hidden}
-    .hero h1{margin:0 0 10px; font-family: ui-serif, Georgia, 'Times New Roman', Times, serif; font-weight:650; letter-spacing:.02em; line-height:1.1; font-size:36px}
+    .hero h1{margin:0 0 10px; font-family: ui-serif,Georgia,'Times New Roman',Times,serif; font-weight:650; letter-spacing:.02em; line-height:1.1; font-size:36px}
     .hero p{margin:0;color:var(--muted)}
     .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);text-decoration:none;color:var(--fg)}
@@ -57,7 +92,19 @@
   <div class="wrap">
     <header>
       <div class="logo">Spyderwell</div>
-      <div class="seal">Quiet Capability</div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/shop/">Shop</a>
+        <a href="/support/">Support</a>
+        <a class="xlink" href="https://x.com/spyderwell" target="_blank" rel="me noopener">
+          <span class="sr-only">@spyderwell on X</span>
+          <!-- Minimal X mark -->
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M18.9 2H22l-7.1 8.1L22 22h-7.3l-4.7-6.2L4.6 22H2l7.6-8.7L2 2h7.3l4.3 5.7L18.9 2Zm-2.6 18h2L7.8 4H5.7l10.6 16Z"/>
+          </svg>
+        </a>
+        <div class="seal">Quiet Capability</div>
+      </nav>
     </header>
 
     <section class="hero" aria-label="Intro">
@@ -126,7 +173,10 @@
 
     <footer>
       <div>Spyderwell © <span id="y"></span></div>
-      <div>Reach out through proper channels.</div>
+      <div>
+        <a href="/shop/">Shop</a> · <a href="/support/">Support</a> ·
+        <a href="https://x.com/spyderwell" target="_blank" rel="me noopener" aria-label="@spyderwell on X">X</a>
+      </div>
     </footer>
   </div>
   <script>
