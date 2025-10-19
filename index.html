@@ -1,62 +1,136 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Spyderwell</title>
+  <meta name="description" content="We quietly fix hard problems and support the causes that matter.">
+  <link rel="icon" href="assets/ribbon_autism_grad.png">
   <style>
-  :root{--bg:#0f1113;--panel:#0b0c0d;--muted:#9aa0a6;--accent:#7b8c99;--glass:rgba(255,255,255,0.03)}
-  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
-  body{background:linear-gradient(180deg,var(--bg),#070708);color:#e7ecef;display:flex;align-items:center;justify-content:center;padding:40px}
-  .card{width:min(880px,95%);background:var(--panel);border-radius:12px;box-shadow:0 6px 30px rgba(2,6,8,0.7);overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
-  .grid{display:grid;grid-template-columns:1fr 360px}
-  .left{padding:48px 56px}
-  .right{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}
-  .box{width:100%;background:var(--glass);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);text-align:center}
-  .logo{font-weight:700;letter-spacing:0.6px;font-size:18px;color:#dfe7ea}
-  h1{margin:0 0 8px;font-weight:600;letter-spacing:0.2px;font-size:26px;color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,0.7)}
-  p.lead{margin:0 0 20px;color:var(--muted);font-size:15px;line-height:1.45}
-  ul{color:var(--muted);padding-left:18px;margin-top:18px}
-  .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn, .email-link{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:8px;color:#d4dadf;cursor:pointer;text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:8px}
-  .btn:hover,.email-link:hover{color:#fff;border-color:var(--accent)}
-  a.link{color:var(--accent);text-decoration:none}
-  footer{padding:18px 24px;color:var(--muted);font-size:13px;text-align:center;background:transparent}
-  @media (max-width:900px){.grid{grid-template-columns:1fr}.right{order:2}.left{order:1;padding:28px}}
-  .envelope{width:14px;height:14px;display:inline-block;background:#d4dadf;mask:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22white%22 d=%22M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z%22/></svg>') no-repeat center/contain}
-</style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    img{max-width:100%;display:block}
+    :root{
+      --bg:#0a0a0a;--fg:#f5f6f7;--muted:#aeb3bb;--line:#191a1d;--radius:16px;
+    }
+    body{background: radial-gradient(1200px 800px at 50% -10%, #151618 0%, var(--bg) 60%); color:var(--fg); font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial}
+    .wrap{max-width:980px;margin:0 auto;padding:24px 18px 100px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .logo{font-family: ui-serif, Georgia, 'Times New Roman', Times, serif; letter-spacing:.04em; font-weight:600; font-size:24px}
+    .seal{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.25));backdrop-filter:blur(2px)}
+    .hero{position:relative; margin:48px 0 18px; padding:28px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.2)); overflow:hidden}
+    .hero h1{margin:0 0 10px; font-family: ui-serif, Georgia, 'Times New Roman', Times, serif; font-weight:650; letter-spacing:.02em; line-height:1.1; font-size:36px}
+    .hero p{margin:0;color:var(--muted)}
+    .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);text-decoration:none;color:var(--fg)}
+    .btn.primary{background:#e9ffe9;color:#0f1311;border-color:transparent;font-weight:800}
+    .btn:active{transform:translateY(1px)}
+    .weave{position:absolute; inset:-10%; pointer-events:none; opacity:.08; filter:saturate(1.1) contrast(1.1);
+      background-repeat:no-repeat; background-size:40% auto, 32% auto, 36% auto, 28% auto;
+      background-position: -10% 10%, 110% 20%, 20% 120%, 90% 110%;
+      mix-blend-mode:screen; animation: drift 40s linear infinite alternate;}
+    .weave{background-image:
+        url('assets/ribbon_autism_pieces.png'),
+        url('assets/ribbon_autism_grad.png'),
+        url('assets/ribbon_diabetes.png'),
+        url('assets/ribbon_breast.png');}
+    @keyframes drift{
+      0%{background-position:-12% 8%, 108% 18%, 18% 118%, 92% 112%}
+      100%{background-position:-6% 14%, 102% 24%, 24% 110%, 86% 106%}
+    }
+    section{margin-top:22px}
+    .grid{display:grid;gap:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.25)); border:1px solid var(--line); border-radius:var(--radius); padding:18px}
+    .card h2{margin:0 0 8px; font-size:14px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted)}
+    .card h3{margin:0 0 6px; font-size:20px; font-weight:700}
+    .card p{margin:0;color:var(--muted)}
+    footer{margin-top:32px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    @media (min-width:720px){
+      .hero h1{font-size:52px}
+      .grid{grid-template-columns:repeat(3,1fr)}
+      .hero{padding:40px}
+    }
+    .wrap{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+  </style>
 </head>
 <body>
-  <div class="card" role="main" aria-label="Spyderwell homepage">
-    <div class="grid">
-      <div class="left">
-        <div class="logo">Spyderwell</div>
-        <h1>Discreet Solutions for Complex Challenges</h1>
-        <p class="lead">Spyderwell provides considered advice and technical architecture for operationally-sensitive projects. Minimal footprint, maximum clarity.</p>
-        <ul>
-          <li>Strategic consulting & technical planning</li>
-          <li>Secure documentation & project handoffs</li>
-          <li>Small-scale deployment & advisory</li>
-        </ul>
-        <div class="cta">
-          <a class="email-link" href="mailto:hello@spyderwell.com"><span class="envelope"></span> Contact Us</a>
-          <a class="btn" href="/spyderbox_login.html">Spyderbox Login</a>
-        </div>
+  <div class="wrap">
+    <header>
+      <div class="logo">Spyderwell</div>
+      <div class="seal">Quiet Capability</div>
+    </header>
+
+    <section class="hero" aria-label="Intro">
+      <div class="weave" aria-hidden="true"></div>
+      <h1>Every signal has a story; every click connects to a cause.</h1>
+      <p>Spyderwell is a modern, private practice focused on sensitive problems. Strategy, negotiation, and execution — handled cleanly, with traceable impact.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See our work</a>
+        <a class="btn" href="#causes">Our causes</a>
       </div>
-      <aside class="right" aria-label="Contact & quick links">
-        <div class="box">
-          <strong>Spyderbox</strong>
-          <div style="margin-top:8px;color:var(--muted);font-size:14px">
-            Private file access for personal documents. Authorized users only.
-          </div>
-        </div>
-        <div class="box">
-          <strong>Files & Docs</strong>
-          <div style="margin-top:8px;color:var(--muted);font-size:14px">Use Spyderbox to access private materials.</div>
-        </div>
-      </aside>
-    </div>
-    <footer>Spyderwell • Minimal | Discreet | Practical</footer>
+    </section>
+
+    <section id="about" class="grid">
+      <article class="card">
+        <h2>About</h2>
+        <h3>Discretion by Design</h3>
+        <p>We serve leaders and teams who need solutions that travel quietly. We keep counsel tight, documents clean, and execution humane.</p>
+      </article>
+      <article class="card">
+        <h2>Approach</h2>
+        <h3>Calm, Precise, Effective</h3>
+        <p>We combine seasoned judgment with modern tools. The mandate is simple: resolve the issue, protect the people, leave no mess.</p>
+      </article>
+      <article class="card">
+        <h2>Channels</h2>
+        <h3>Engagement</h3>
+        <p>We respond through established introductions only. If you know, you know. Otherwise, support our causes below.</p>
+      </article>
+    </section>
+
+    <section id="work" class="grid">
+      <article class="card">
+        <h2>Work</h2>
+        <h3>Advisory & Resolution</h3>
+        <p>Negotiations, sensitive restructures, and special projects. We steady the room, simplify the path, and get it done.</p>
+      </article>
+      <article class="card">
+        <h2>Capabilities</h2>
+        <h3>Strategy, Ops, Comms</h3>
+        <p>From positioning and policy to communications and operational turnarounds — measured, documented, defensible.</p>
+      </article>
+      <article class="card">
+        <h2>Delivery</h2>
+        <h3>Small Team, Large Effect</h3>
+        <p>Lean core, expert network. We staff to the task and keep overhead invisible.</p>
+      </article>
+    </section>
+
+    <section id="causes" class="grid" aria-label="Causes">
+      <article class="card">
+        <h2>Causes</h2>
+        <h3>Autism Support</h3>
+        <p>We back programs that prioritize dignity, access, and employment for autistic individuals and their families.</p>
+      </article>
+      <article class="card">
+        <h2>&nbsp;</h2>
+        <h3>Type 1 Diabetes</h3>
+        <p>Support for care, tech access, and research. Practical help for daily management.</p>
+      </article>
+      <article class="card">
+        <h2>&nbsp;</h2>
+        <h3>Cancer & Breast Cancer</h3>
+        <p>Patient services and early detection initiatives — tangible support when it matters most.</p>
+      </article>
+    </section>
+
+    <footer>
+      <div>Spyderwell © <span id="y"></span></div>
+      <div>Reach out through proper channels.</div>
+    </footer>
   </div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
