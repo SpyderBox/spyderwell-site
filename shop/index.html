@@ -5,26 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shop | Spyderwell</title>
   <link rel="canonical" href="https://spyderwell.com/shop/">
-  <meta name="description" content="Affiliate gear and tools we actually use — Spyderwell Shop.">
+  <meta name="description" content="Affiliate gear and tools we actually use — Shop Spyderwell.">
   <style>
-    body{font-family:system-ui,Helvetica,Arial,sans-serif;background:#0a0a0a;color:#f5f6f7;margin:0;padding:40px;text-align:center}
+    :root{--bg:#0a0a0a;--fg:#f5f6f7;--muted:#aeb3bb;--line:#191a1d;--card:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.25));--radius:16px}
+    html,body{margin:0;padding:0;background:#0a0a0a;color:var(--fg);font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial}
     a{color:#8fd;text-decoration:none}
-    h1{margin-bottom:0.5em}
-    p{color:#aeb3bb;max-width:420px;margin:0 auto 1.5em}
-    footer{margin-top:2em;font-size:14px;color:#888}
+    .wrap{max-width:980px;margin:0 auto;padding:40px 18px 80px}
+    header,footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    h1{margin:.2em 0 .4em}
+    p.muted{color:var(--muted);max-width:680px}
+    .grid{display:grid;gap:14px;margin-top:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .tag{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);margin-left:8px;color:#cfe}
+    @media (min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
   </style>
 </head>
 <body>
-  <h1>Shop</h1>
-  <p>Affiliate gear and tools we actually use — part of the <a href="/">Spyderwell</a> practice ecosystem.</p>
-  <ul style="list-style:none;padding:0">
-    <li>MX³ Vertical Mouse — In Use</li>
-    <li>Vibram FiveFingers — In Rotation</li>
-    <li>GE LED+ Lights — Verified</li>
-    <li>Owala Bottle — Daily Carry</li>
-  </ul>
-  <footer>
-    <a href="/">Home</a> · <a href="/support/">Support</a>
-  </footer>
+  <div class="wrap">
+    <header>
+      <a href="/" aria-label="Home">← Spyderwell</a>
+      <nav><a href="/support/">Support</a></nav>
+    </header>
+
+    <main>
+      <h1>Shop</h1>
+      <p class="muted">
+        We list gear we actually use. Buying through these links may earn a small commission that helps fund our causes.
+      </p>
+      <p class="muted"><strong>Fam walkthrough:</strong> tap a card → “Buy on Amazon.” That’s it—same price to you, tiny boost to our projects.</p>
+
+      <section id="grid" class="grid" aria-label="Products"></section>
+
+      <p class="muted" style="margin-top:20px;font-size:12px">
+        *Affiliate disclosure:* As an Amazon Associate we earn from qualifying purchases.
+      </p>
+    </main>
+
+    <footer>
+      <div><a href="/">Home</a> · <a href="/support/">Support</a></div>
+      <div><a href="https://x.com/spyderwell" target="_blank" rel="me noopener" aria-label="@spyderwell on X">X</a></div>
+    </footer>
+  </div>
+
+  <script>
+    async function renderProducts() {
+      try {
+        const res = await fetch('./products.json', {cache: 'no-store'});
+        if (!res.ok) throw new Error('Failed to load products.json');
+        const items = await res.json();
+        const grid = document.getElementById('grid');
+
+        items.forEach(({title, category, status, url, short_copy}) => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.innerHTML = `
+            <h3>${title} <span class="tag">${status}</span></h3>
+            <div class="meta">${category}</div>
+            <p class="muted">${short_copy}</p>
+            <p style="margin-top:10px">
+              <a class="btn" href="${url}" target="_blank" rel="nofollow sponsored noopener">Buy on Amazon</a>
+            </p>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (e) {
+        document.getElementById('grid').innerHTML =
+          '<div class="card"><p class="muted">Could not load products. Try refreshing.</p></div>';
+        console.error(e);
+      }
+    }
+    renderProducts();
+  </script>
 </body>
 </html>
