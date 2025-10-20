@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Adidas 3-Stripes Track Jacket",
+    "category": "Lifestyle",
+    "status": "In Use",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/adidas_3stripe.jpg",
+    "short_copy": "A black-on-black classic. Timeless, clean, effortless."
+  },
+  {
+    "title": "Gaoye 5-Pack Reading Glasses",
+    "category": "Lifestyle",
+    "status": "In Use",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/gaoye_5pack.jpg",
+    "short_copy": "You don’t need perfect vision to see this great deal."
+  },
+  {
+    "title": "Germ-X Hydrating Hand Sanitizer (6-Pack)",
+    "category": "Health",
+    "status": "In Use",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/germx_6pack.jpg",
+    "short_copy": "Keep it clean, keep it simple — 99.99% of germs gone."
+  },
+  {
+    "title": "Logitech MX Anywhere 3S",
+    "category": "Tech & Tools",
+    "status": "In Use",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/mx_anywhere_3s.jpg",
+    "short_copy": "Compact precision on any surface — your desk’s best friend."
+  },
+  {
+    "title": "Buself Oven Liners (2-Pack)",
+    "category": "Home & Kitchen",
+    "status": "In Use",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/over_liner.jpg",
+    "short_copy": "Tired of battling baked-on mess? These liners save your sanity."
+  },
+  {
+    "title": "Simparica Trio",
+    "category": "Pets",
+    "status": "In Use",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/simparica_trio.jpg",
+    "short_copy": "Vet-trusted protection — let Amazon remember your pet’s schedule."
+  },
+  {
+    "title": "Vibram FiveFingers V-Alpha Trail Shoe",
+    "category": "Lifestyle",
+    "status": "Queued",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/vibram_trek_ascent.jpg",
+    "short_copy": "Next in the toe-shoe queue — the barefoot feel you’ll swear by."
+  },
+  {
+    "title": "YETI Rambler 34oz French Press",
+    "category": "Home & Kitchen",
+    "status": "In Use",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/yeti_french_press34.jpg",
+    "short_copy": "Brew bold. Built for mornings that mean business."
+  },
+  {
+    "title": "YETI MagSlider Lid (34oz)",
+    "category": "Home & Kitchen",
+    "status": "In Use",
+    "url": "https://amzn.to/your-affiliate-link",
+    "image": "/shop/img/yeti_rambler_lid34.jpg",
+    "short_copy": "Pairs perfectly with the Rambler — clean sip, no spills."
+  }
+]
